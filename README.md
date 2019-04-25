@@ -1,2 +1,2 @@
-Arielle Gantelet
+Arielle Gantelet \\
 & Mathilde Cadon
