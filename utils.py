@@ -1,3 +1,7 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+
 def calcul_nb_voisins(Z):
     forme = len(Z), len(Z[0])
     N = [[0, ] * (forme[0]) for i in range(forme[1])]
@@ -31,3 +35,5 @@ def iteration_jeu(Z):
             elif Z[x][y] == 0 and N[x][y] == 3:
                 Z[x][y] = 1
     return Z
+
+
