@@ -17,12 +17,12 @@ def calcul_nb_voisins(Z):
 
 def iteration_jeu(Z):
     """
-    Fonction qui prend en argument l'Ètat initial du jeu de la vie (sous forme de liste de liste).
-    Fonction qui retourne l'Ètat du jeu aprËs 1 itÈration.
+    Fonction qui prend en argument l'√©tat initial du jeu de la vie (sous forme de liste de liste).
+    Fonction qui retourne l'√©tat du jeu apr√®s 1 it√©ration.
     
-    La fonction fait appel ‡ la fonction qui calcule le nombre de voisins puis modifie
-    les cellules, qui sont reprÈsentÈes par des 0 ou des 1 dans la matrice Z,
-    en appliquant la rËgle de dÈcision expliquÈe ci dessus.
+    La fonction fait appel √† la fonction qui calcule le nombre de voisins puis modifie
+    les cellules, qui sont repr√©sent√©es par des 0 ou des 1 dans la matrice Z,
+    en appliquant la r√®gle de d√©cision expliqu√©e ci dessus.
     
     """
     
@@ -55,12 +55,12 @@ def calcul_nb_voisins_fast(Z):
 @jit(nopython=True)
 def iteration_jeu_fast(Z):
     """
-    Fonction qui prend en argument l'Ètat initial du jeu de la vie (sous forme de liste de liste).
-    Fonction qui retourne l'Ètat du jeu aprËs 1 itÈration.
+    Fonction qui prend en argument l'√©tat initial du jeu de la vie (sous forme de liste de liste).
+    Fonction qui retourne l'√©tat du jeu apr√®s 1 it√©ration.
     
-    La fonction fait appel ‡ la fonction qui calcule le nombre de voisins puis modifie
-    les cellules, qui sont reprÈsentÈes par des 0 ou des 1 dans la matrice Z,
-    en appliquant la rËgle de d√©cision expliquÈe ci dessus.
+    La fonction fait appel √† la fonction qui calcule le nombre de voisins puis modifie
+    les cellules, qui sont repr√©sent√©es par des 0 ou des 1 dans la matrice Z,
+    en appliquant la r√®gle de d√©cision expliqu√©e ci dessus.
     
     """
     forme = len(Z), len(Z[0])
