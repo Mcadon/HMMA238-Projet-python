@@ -72,3 +72,13 @@ def iteration_jeu_fast(Z):
             elif (Z[x][y] == 0) and (N[x][y] == 3):
                 Z[x][y] = 1
     return Z
+
+
+def fig_digit(x, w, alpha):
+    """
+    """
+    plt.subplot(1,2,1)
+    plt.imshow(x.reshape(28,28))
+    xmod = x.reshape(784,1)-alpha/np.linalg.norm(w)**2 * np.dot(w.T,x) * w
+    plt.subplot(1,2,2)
+    plt.imshow(xmod.reshape(28,28))
