@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+import math
 
 def calcul_nb_voisins(Z):
     forme = len(Z), len(Z[0])
@@ -73,7 +73,15 @@ def iteration_jeu_fast(Z):
                 Z[x][y] = 1
     return Z
 
-
+def iteration(Z, nb_iter):
+    plt.figure(figsize=(25,20))
+    Zbis = np.copy(Z)
+    for i in range(nb_iter):
+        plt.subplot(math.ceil(nb_iter/5),5,i+1)
+        plt.imshow(np.array(Zbis))
+        Zbis = iteration_jeu(Zbis)
+        
+        
 def fig_digit(x, w, alpha):
     """
     """
