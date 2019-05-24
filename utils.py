@@ -103,6 +103,12 @@ def iteration(Z, nb_iter):
         
 def fig_digit(x, w, alpha):
     """
+    Cette fonction prend en argument une image sous forme de vecteur, un vecteur de coefficient de regréssion logistique et un réel alpha.
+    Cette fonction permet de voir la différence entre l'image originelle et l'image transformée, grâce la formule de transformation de
+    l'image donnée dans l'énoncé.
+    
+    Cette fonction affiche deux images côte à côte par un subplot, à gauche l'image originelle, elle calcule ensuite le vecteur de l'image
+    transformée. Enfin elle l'affiche à droite de l'image précédente.
     """
     plt.subplot(1,2,1)
     plt.imshow(x.reshape(28,28))
