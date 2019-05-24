@@ -3,6 +3,9 @@ import matplotlib.pyplot as plt
 import math
 
 def calcul_nb_voisins(Z):
+    """
+    Cette fonction retourne le nombre de voisins de chaque cellule n'étant pas aux frontières
+    """
     forme = len(Z), len(Z[0])
     N = [[0, ] * (forme[0]) for i in range(forme[1])]
     for x in range(1, forme[0] - 1):
@@ -22,9 +25,14 @@ def iteration_jeu(Z):
     
     La fonction fait appel à la fonction qui calcule le nombre de voisins puis modifie
     les cellules, qui sont représentées par des 0 ou des 1 dans la matrice Z,
-    en appliquant la règle de décision expliquée ci dessus.
+    en appliquant la règle de décision expliquée dans l'énoncée.
+    
+    - Si la cellule est vivante et qu'elle a moins de 2 voisins ou plus de 3 voisins, alors elle meurt.
+    - Si la cellule est morte et qu'elle à 3 voisins alors elle vit.
+    Dans tous les autres cas, la cellule reste dans le même état.
     
     """
+    
     
     forme = len(Z), len(Z[0])
     N = calcul_nb_voisins(Z)
@@ -42,6 +50,9 @@ from numba import jit
 
 @jit(nopython=True)
 def calcul_nb_voisins_fast(Z):
+    """
+    Cette fonction retourne le nombre de voisins de chaque cellule n'étant pas aux frontières
+    """
     forme = len(Z), len(Z[0])
     N = [[0, ] * (forme[0]) for i in range(forme[1])]
     for x in range(1, forme[0] - 1):
@@ -60,9 +71,14 @@ def iteration_jeu_fast(Z):
     
     La fonction fait appel à la fonction qui calcule le nombre de voisins puis modifie
     les cellules, qui sont représentées par des 0 ou des 1 dans la matrice Z,
-    en appliquant la règle de décision expliquée ci dessus.
+    en appliquant la règle de décision expliquée dans l'énoncée.
+    
+    - Si la cellule est vivante et qu'elle a moins de 2 voisins ou plus de 3 voisins, alors elle meurt.
+    - Si la cellule est morte et qu'elle à 3 voisins alors elle vit.
+    Dans tous les autres cas, la cellule reste dans le même état.
     
     """
+    
     forme = len(Z), len(Z[0])
     N = calcul_nb_voisins_fast(Z)
     for x in range(1, forme[0] - 1):
@@ -74,6 +90,9 @@ def iteration_jeu_fast(Z):
     return Z
 
 def iteration(Z, nb_iter):
+    """
+    Fonction qui permet d'afficher les états successifs du jeu de la vie.
+    """
     plt.figure(figsize=(25,20))
     Zbis = np.copy(Z)
     for i in range(nb_iter):
