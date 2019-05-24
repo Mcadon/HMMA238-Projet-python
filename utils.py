@@ -99,6 +99,7 @@ def iteration(Z, nb_iter):
         plt.subplot(math.ceil(nb_iter/5),5,i+1)
         plt.imshow(np.array(Zbis))
         Zbis = iteration_jeu(Zbis)
+        plt.title("Itération n°" + str(i))
         
         
 def fig_digit(x, w, alpha):
@@ -112,6 +113,8 @@ def fig_digit(x, w, alpha):
     """
     plt.subplot(1,2,1)
     plt.imshow(x.reshape(28,28))
+    plt.title("Image d'origine")
     xmod = x.reshape(784,1)-alpha/np.linalg.norm(w)**2 * np.dot(w.T,x) * w
     plt.subplot(1,2,2)
     plt.imshow(xmod.reshape(28,28))
+    plt.title("Image transformée")
